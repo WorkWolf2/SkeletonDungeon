@@ -1,0 +1,8 @@
+name: SkeletonDungeon
+version: '${version}'
+main: me.workwolf.skeletondungeon.SkeletonDungeon
+api-version: '1.20'
+softdepend:
+  - Oraxen
+depend:
+  - MythicMobs

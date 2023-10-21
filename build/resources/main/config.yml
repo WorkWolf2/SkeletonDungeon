@@ -1,0 +1,41 @@
+# Skeleton BoosRoom Plugin created by WorkWolf_2
+# For PALLADIUMS
+dungeon:
+  name: 'Skeleton' #NOME DEL DUNGEON (NON INSERIRE NUMERI)
+  item-id: 'mana_potion' #ID DELL'ITEM (oraxen) DA USARE PER APRIRE LA BOSS ROOM
+  base64-block: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWMyMWViYzAwMzAxMmIxMjhjNTEwYTg1OThlMTM5ZjUxZjBlYzg4YmE1Y2VhNTg1ZWYwMDdlZDc1NDgzN2ZlMyJ9fX0='
+  boss-name: 'Lich_King'
+
+location:
+  teleport: #POSIZIONE DEL TELETRASPORTO
+    world: "world"
+    x: -130.596
+    y: 66
+    z: 397.445
+    yaw: 90.1
+    pitch: 1.4
+  boss:
+    world: "world"
+    x: -132.047
+    y: 66
+    z: 396.645
+    yaw: 89.6
+    pitch: -1.0
+  spawn: #POSIZIONE DEL TELETRASPORTO
+    world: "world"
+    x: -130.596
+    y: 66
+    z: 397.445
+    yaw: 90.1
+    pitch: 1.4
+
+entering:
+  - "cmi titlemsg {user} {messaggio}"
+
+rewards:
+  - "o give {user} mana_potion 1"
+  - "give {user} golden_apple 1"
+
+messages:
+  title: "Che la forza sia con te"
+  exit: "Uscita dal dungeon tra 10 secondi!"
