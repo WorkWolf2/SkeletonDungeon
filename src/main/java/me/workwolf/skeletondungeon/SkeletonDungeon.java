@@ -21,12 +21,12 @@ public final class SkeletonDungeon extends JavaPlugin {
     @Override
     public void onEnable() {
         Logger.log(Logger.LogLevel.OUTLINE, "*********************");
-        Logger.log(Logger.LogLevel.INFO, "Connettendo il database!");
-        Conn();
-        Logger.log(Logger.LogLevel.INFO, "Database Connesso con successo!");
         Logger.log(Logger.LogLevel.INFO, "Caricando i file di config!");
         saveDefaultConfig();
         Logger.log(Logger.LogLevel.INFO, "File di config caricati con successo!");
+        Logger.log(Logger.LogLevel.INFO, "Connettendo il database!");
+        Conn();
+        Logger.log(Logger.LogLevel.INFO, "Database Connesso con successo!");
         getServer().getPluginManager().registerEvents(new onPlayerInteract(this), this);
         getServer().getPluginManager().registerEvents(new BossDeath(this), this);
         Logger.log(Logger.LogLevel.OUTLINE, "*********************");
