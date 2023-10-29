@@ -1,9 +1,11 @@
 package me.workwolf.skeletondungeon;
 
+import me.workwolf.skeletondungeon.Commands.reload;
 import me.workwolf.skeletondungeon.Events.BossDeath;
 import me.workwolf.skeletondungeon.Events.onPlayerInteract;
 import me.workwolf.skeletondungeon.Utils.Database.Database;
 import me.workwolf.skeletondungeon.Utils.Logger;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -18,6 +20,8 @@ public final class SkeletonDungeon extends JavaPlugin {
         return sql;
     }
 
+    FileConfiguration config;
+
     @Override
     public void onEnable() {
         Logger.log(Logger.LogLevel.OUTLINE, "*********************");
@@ -29,6 +33,7 @@ public final class SkeletonDungeon extends JavaPlugin {
         Logger.log(Logger.LogLevel.INFO, "Database Connesso con successo!");
         getServer().getPluginManager().registerEvents(new onPlayerInteract(this), this);
         getServer().getPluginManager().registerEvents(new BossDeath(this), this);
+        getCommand("sd").setExecutor(new reload(this));
         Logger.log(Logger.LogLevel.OUTLINE, "*********************");
     }
 
@@ -54,4 +59,11 @@ public final class SkeletonDungeon extends JavaPlugin {
         }
     }
 
+    public void reloadConfig() {
+        super.reloadConfig();
+
+        config = getConfig();
+        config.options().copyDefaults(true);
+        saveConfig();
+    }
 }

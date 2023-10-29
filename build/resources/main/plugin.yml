@@ -1,8 +1,12 @@
 name: SkeletonDungeon
-version: '1.1'
+version: '1.2'
 main: me.workwolf.skeletondungeon.SkeletonDungeon
 api-version: '1.20'
 softdepend:
   - Oraxen
 depend:
   - MythicMobs
+commands:
+  sd:
+    description: reload command
+    permission: "skeletodungeon.command.reload"

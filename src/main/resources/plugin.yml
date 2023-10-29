@@ -6,3 +6,7 @@ softdepend:
   - Oraxen
 depend:
   - MythicMobs
+commands:
+  sd:
+    description: reload command
+    permission: "skeletodungeon.command.reload"
